@@ -37,8 +37,9 @@
 7. [Model Comparison & Benchmark Results](#-model-comparison--benchmark-results)
 8. [Business Impact & Strategic Recommendations](#-business-impact--strategic-recommendations)
 9. [Repository Structure & Model Artifacts](#-repository-structure--model-artifacts)
-10. [Installation & Quick Start](#-installation--quick-start)
-11. [Git Deployment Guide](#-git-deployment-guide)
+10. [Interactive Project Showcase Website](#-interactive-project-showcase-website)
+11. [Installation & Quick Start](#-installation--quick-start)
+12. [Git Deployment Guide](#-git-deployment-guide)
 
 ---
 
@@ -312,10 +313,54 @@ financial-fraud-detection/
 │   ├── [Clustering]_Submission_Akhir_BMLP_GathanHilabi.ipynb   # Pipeline Clustering & Preprocessing
 │   └── [Klasifikasi]_Submission_Akhir_BMLP_GathanHilabi.ipynb  # Pipeline Klasifikasi & Tuning
 │
+├── website/                                # 🌐 Interactive Project Showcase Website (React + Vite + Tailwind CSS)
+│   ├── src/
+│   │   ├── components/                     # 13 Modular UI Showcase Components
+│   │   ├── data/projectData.ts             # 100% Verified Metrics, Centroids, & PCA Data
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.ts
+│
 ├── .gitignore                              # Git ignore configuration
 ├── requirements.txt                        # Daftar dependensi library Python
 └── README.md                               # Dokumentasi teknis proyek
 ```
+
+---
+
+## 🌐 Interactive Project Showcase Website
+
+Proyek ini dilengkapi dengan **Interactive Technical Showcase Web Application** yang dibangun menggunakan **React, Vite, TypeScript, Tailwind CSS, dan Recharts**. Website ini berfungsi sebagai antarmuka visual komparatif dan *interactive case study* langsung dari model dan data di repositori ini.
+
+### Fitur Utama Showcase Website:
+1. **Interactive PCA 2D Cluster Explorer**: Visualisasi *scatter plot* 2D proyeksi PCA dengan koordinat *centroid* presisi K-Means ($k=3$), fitur filter per-klaster, dan *custom tooltip*.
+2. **Dynamic Confusion Matrix & Benchmark Comparison**: Switcher metrik interaktif (*Accuracy*, *Macro Precision*, *Macro Recall*, *Macro F1*) dan visualisasi matriks konfusi dinamis untuk ketiga model (*Decision Tree*, *Random Forest*, dan *Tuned Random Forest*).
+3. **Interactive Feature Dictionary**: Pencarian dan penyaringan data fitur secara *real-time* (tipe, kategori, dan deskripsi bisnis).
+4. **6-Stage Preprocessing Pipeline Card**: Penjelasan visual langkah demi langkah pembersihan data dari 2.537 baris mentah hingga 1.945 baris bersih.
+5. **GridSearchCV Parameter Inspector**: Visualisasi grid kombinasi parameter dan skor validasi silang terbaik (98.65%).
+6. **Downloadable Model Artifacts Table**: Akses cepat ke file model serialisasi di folder `models/` dengan spesifikasi ukuran dan formatnya.
+7. **Mathematical & Architecture Accordion**: Formula matematis K-Means, Silhouette Coefficient, PCA Variance, dan Gini Impurity.
+
+### Menjalankan Website Secara Lokal:
+```bash
+# 1. Masuk ke direktori website
+cd website
+
+# 2. Install dependensi Node.js
+npm install
+
+# 3. Jalankan development server
+npm run dev
+```
+Buka browser pada alamat `http://localhost:5173` (atau port yang ditunjukkan oleh Vite) untuk menjelajahi showcase interaktif.
+
+### Build untuk Produksi:
+```bash
+npm run build
+```
+Hasil build statis siap deploy akan tersimpan di direktori `website/dist/`.
 
 ---
 
