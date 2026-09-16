@@ -41,7 +41,7 @@
 9. [Repository Structure & Model Artifacts](#-repository-structure--model-artifacts)
 10. [Interactive Project Showcase Website](#-interactive-project-showcase-website)
 11. [Installation & Quick Start](#-installation--quick-start)
-12. [Git Deployment Guide](#-git-deployment-guide)
+12. [Lisensi & Atribusi](#-lisensi--atribusi)
 
 ---
 
@@ -416,39 +416,6 @@ model = joblib.load('models/tuning_classification.h5')
 # y_pred = model.predict(X_new)
 print("Model berhasil dimuat dan siap melakukan prediksi.")
 ```
-
----
-
-## 📤 Git Deployment Guide
-
-Gunakan urutan perintah CLI berikut untuk mengunggah proyek ini ke repositori GitHub:
-
-```bash
-# Inisialisasi git pada root project
-git init
-
-# Tambahkan README.md (dan file lainnya) ke staging area
-git add README.md
-
-# Lakukan commit pertama
-git commit -m "first commit: add comprehensive documentation"
-
-# Atur branch utama ke main
-git branch -M main
-
-# Tambahkan remote repository GitHub
-git remote add origin https://github.com/G-than12/financial-fraud-detection.git
-
-# Push ke repositori GitHub
-git push -u origin main
-```
-
-> **Tips:** Jika ingin mengunggah seluruh folder data, models, dan notebooks, jalankan:
-> ```bash
-> git add .
-> git commit -m "feat: complete end-to-end clustering and classification pipeline"
-> git push origin main
-> ```
 
 ---
 
