@@ -4,6 +4,7 @@
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.5%2B-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Vercel Deployment](https://img.shields.io/badge/Live_Showcase-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://financial-fraud-detection-showcase.vercel.app/)
 [![Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/G-than12/financial-fraud-detection)
 
 > **End-to-End Machine Learning Workflow**: Segmentasi perilaku transaksi nasabah menggunakan *Unsupervised Learning* (K-Means Clustering & PCA) yang diintegrasikan dengan *Supervised Learning* (Klasifikasi Multi-Kelas berbasis Random Forest & Decision Tree) untuk prediksi segmen nasabah baru secara presisi dan *real-time*.
@@ -13,6 +14,7 @@
 ## 👤 Author Information
 - **Author**: Gathan Hilabi
 - **Track**: Machine Learning Engineering & Data Science
+- **Live Showcase Website**: [https://financial-fraud-detection-showcase.vercel.app/](https://financial-fraud-detection-showcase.vercel.app/)
 - **Repository URL**: [https://github.com/G-than12/financial-fraud-detection](https://github.com/G-than12/financial-fraud-detection)
 
 ---
@@ -331,6 +333,8 @@ financial-fraud-detection/
 ---
 
 ## 🌐 Interactive Project Showcase Website
+
+> 🚀 **Live Interactive Demo**: [https://financial-fraud-detection-showcase.vercel.app/](https://financial-fraud-detection-showcase.vercel.app/)
 
 Proyek ini dilengkapi dengan **Interactive Technical Showcase Web Application** yang dibangun menggunakan **React, Vite, TypeScript, Tailwind CSS, dan Recharts**. Website ini berfungsi sebagai antarmuka visual komparatif dan *interactive case study* langsung dari model dan data di repositori ini.
 
