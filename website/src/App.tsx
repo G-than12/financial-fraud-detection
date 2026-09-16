@@ -12,6 +12,7 @@ import { TechnicalDetailsAccordion } from './components/TechnicalDetailsAccordio
 import { LimitationsAndFuture } from './components/LimitationsAndFuture';
 import { AuthorSection } from './components/AuthorSection';
 import { Footer } from './components/Footer';
+import { ScrollReveal } from './components/ScrollReveal';
 
 export function App() {
   return (
@@ -19,17 +20,39 @@ export function App() {
       <Navbar />
       <main>
         <Hero />
-        <ProjectOverview />
-        <DatasetSection />
-        <PreprocessingSection />
-        <ClusteringSection />
-        <ClassificationSection />
-        <HyperparameterSection />
-        <ModelArtifactsSection />
-        <MethodologyTimeline />
-        <TechnicalDetailsAccordion />
-        <LimitationsAndFuture />
-        <AuthorSection />
+        <ScrollReveal>
+          <ProjectOverview />
+        </ScrollReveal>
+        <ScrollReveal>
+          <DatasetSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <PreprocessingSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ClusteringSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ClassificationSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <HyperparameterSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ModelArtifactsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <MethodologyTimeline />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TechnicalDetailsAccordion />
+        </ScrollReveal>
+        <ScrollReveal>
+          <LimitationsAndFuture />
+        </ScrollReveal>
+        <ScrollReveal>
+          <AuthorSection />
+        </ScrollReveal>
       </main>
       <Footer />
     </div>
