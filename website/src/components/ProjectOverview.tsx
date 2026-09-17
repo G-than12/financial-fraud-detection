@@ -42,20 +42,20 @@ export const ProjectOverview: React.FC = () => {
   ];
 
   return (
-    <section id="overview" className="py-20 border-t border-zinc-200/80 bg-white">
+    <section id="overview" className="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 text-xs font-mono font-medium text-zinc-600 mb-3">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 mb-3 border border-transparent dark:border-zinc-800">
             <span>SECTION 01</span>
             <span>·</span>
             <span>EXECUTIVE SUMMARY</span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">
             Project Overview & Architecture
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Understanding the transition from unsupervised behavioral discovery to automated supervised inference in banking transaction environments.
           </p>
         </div>
@@ -67,29 +67,35 @@ export const ProjectOverview: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-5 rounded-xl border border-zinc-200/90 bg-[#fafaf9] hover:bg-white transition-all shadow-subtle hover:shadow-elevated"
+                className="p-5 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-[#fafaf9] dark:bg-zinc-900 hover:bg-white dark:hover:bg-zinc-850 transition-all shadow-subtle hover:shadow-elevated"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="p-2 rounded-lg bg-zinc-200/60 text-zinc-700">
+                  <div className="p-2 rounded-lg bg-zinc-200/60 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-400">STAT 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">STAT 0{idx + 1}</span>
                 </div>
-                <div className={`text-2xl font-bold tracking-tight ${card.accent} font-mono`}>
+                <div className={`text-2xl font-bold tracking-tight font-mono ${
+                  card.accent === 'text-zinc-900'
+                    ? 'text-zinc-900 dark:text-zinc-100'
+                    : card.accent === 'text-emerald-600'
+                    ? 'text-emerald-600 dark:text-emerald-400'
+                    : 'text-indigo-600 dark:text-indigo-400'
+                }`}>
                   {card.value}
                 </div>
-                <div className="text-xs font-semibold text-zinc-800 mt-1">{card.label}</div>
-                <div className="text-[11px] text-zinc-500 font-mono mt-0.5">{card.sublabel}</div>
+                <div className="text-xs font-semibold text-zinc-800 dark:text-zinc-200 mt-1">{card.label}</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-mono mt-0.5">{card.sublabel}</div>
               </div>
             );
           })}
         </div>
 
         {/* Narrative Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 pt-2 border-t border-zinc-100">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 pt-2 border-t border-zinc-100 dark:border-zinc-800">
           
-          <div className="space-y-4 text-sm sm:text-base text-zinc-600 leading-relaxed">
-            <h3 className="text-lg font-semibold text-zinc-950 font-sans">
+          <div className="space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <h3 className="text-lg font-semibold text-zinc-950 dark:text-white font-sans">
               Mengapa Unsupervised Learning (Clustering) Dilakukan?
             </h3>
             <p>
@@ -100,27 +106,27 @@ export const ProjectOverview: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-4 text-sm sm:text-base text-zinc-600 leading-relaxed">
-            <h3 className="text-lg font-semibold text-zinc-950 font-sans">
+          <div className="space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <h3 className="text-lg font-semibold text-zinc-950 dark:text-white font-sans">
               Mengapa Supervised Learning (Klasifikasi) Dilanjutkan?
             </h3>
             <p>
               Dalam sistem produksi perbankan, menjalankan algoritma clustering setiap kali transaksi baru masuk membutuhkan komputasi berat dan berisiko menggeser batas klaster (*centroid drift*).
             </p>
             <p>
-              Oleh karena itu, label klaster hasil K-Means dijadikan sebagai target kelas (<code className="px-1.5 py-0.5 rounded bg-zinc-100 font-mono text-xs text-zinc-800">Target: 0, 1, 2</code>) untuk melatih model klasifikasi <strong>Decision Tree</strong> dan <strong>Random Forest</strong>. Model terbaik yang dioptimasi via <strong>GridSearchCV</strong> mencapai akurasi uji <strong>98.97%</strong>, memungkinkan pengenalan segmen nasabah baru secara instan (*real-time inference*).
+              Oleh karena itu, label klaster hasil K-Means dijadikan sebagai target kelas (<code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs text-zinc-800 dark:text-zinc-200">Target: 0, 1, 2</code>) untuk melatih model klasifikasi <strong>Decision Tree</strong> dan <strong>Random Forest</strong>. Model terbaik yang dioptimasi via <strong>GridSearchCV</strong> mencapai akurasi uji <strong>98.97%</strong>, memungkinkan pengenalan segmen nasabah baru secara instan (*real-time inference*).
             </p>
           </div>
 
         </div>
 
         {/* Callout: Fraud Baseline Note */}
-        <div className="mt-12 p-5 rounded-xl bg-zinc-50 border border-zinc-200 flex items-start gap-4">
-          <div className="p-1 rounded-full bg-emerald-100 text-emerald-700 mt-0.5">
+        <div className="mt-12 p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+          <div className="p-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 mt-0.5">
             <CheckCircle className="w-4 h-4" />
           </div>
-          <div className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-            <strong className="text-zinc-900 font-semibold block mb-1">
+          <div className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <strong className="text-zinc-900 dark:text-zinc-100 font-semibold block mb-1">
               Catatan Hubungan Profiling & Fraud Detection:
             </strong>
             Meskipun proyek ini tidak melakukan klasifikasi biner <em>Fraud vs Legitimate</em> (karena dataset transaksi finansial tidak memiliki label penipuan ground-truth eksplisit), segmentasi perilaku transaksi semacam ini merupakan komponen fundamental (*behavioral baseline*) bagi institusi perbankan untuk mendeteksi anomali saat sebuah transaksi menyimpang jauh dari batas wajar klaster nasabah bersangkutan.

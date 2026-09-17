@@ -4,20 +4,20 @@ import { HYPERPARAMETER_DETAILS } from '../data/projectData';
 
 export const HyperparameterSection: React.FC = () => {
   return (
-    <section className="py-20 border-t border-zinc-200/80 bg-[#fafaf9]">
+    <section className="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-[#fafaf9] dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 text-xs font-mono font-medium text-zinc-600 mb-3">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 mb-3 border border-transparent dark:border-zinc-800">
             <span>SECTION 06</span>
             <span>·</span>
             <span>OPTIMIZATION & TUNING</span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">
             GridSearchCV Hyperparameter Optimization
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Menemukan konfigurasi ensemble Random Forest paling optimal melalui pencarian grid mendalam dengan 5-fold stratified cross-validation.
           </p>
         </div>
@@ -26,54 +26,54 @@ export const HyperparameterSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Left Column: Parameter Search Space Table */}
-          <div className="lg:col-span-6 rounded-2xl bg-white border border-zinc-200 p-6 sm:p-8 shadow-subtle space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-zinc-100">
+          <div className="lg:col-span-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-8 shadow-subtle space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-100 dark:border-zinc-800">
               <div>
-                <h3 className="text-lg font-bold text-zinc-950 font-sans">
+                <h3 className="text-lg font-bold text-zinc-950 dark:text-white font-sans">
                   Parameter Search Space Grid
                 </h3>
-                <span className="text-xs text-zinc-500 font-mono">
+                <span className="text-xs text-zinc-500 dark:text-zinc-400 font-mono">
                   18 Kombinasi Parameter × 5 Folds = 90 Total Fits
                 </span>
               </div>
-              <span className="p-2 rounded-lg bg-zinc-100 text-zinc-700">
+              <span className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
                 <Sliders className="w-4 h-4" />
               </span>
             </div>
 
             <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 space-y-1">
+              <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/70 border border-zinc-200/80 dark:border-zinc-800 space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="font-mono text-xs font-bold text-zinc-900">n_estimators</span>
-                  <span className="text-xs font-mono text-zinc-500">[50, 100, 200]</span>
+                  <span className="font-mono text-xs font-bold text-zinc-900 dark:text-zinc-100">n_estimators</span>
+                  <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">[50, 100, 200]</span>
                 </div>
-                <p className="text-xs text-zinc-600">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400">
                   Jumlah pohon keputusan (decision trees) di dalam ensemble ensemble bagging.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 space-y-1">
+              <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/70 border border-zinc-200/80 dark:border-zinc-800 space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="font-mono text-xs font-bold text-zinc-900">max_depth</span>
-                  <span className="text-xs font-mono text-zinc-500">[None, 10, 20]</span>
+                  <span className="font-mono text-xs font-bold text-zinc-900 dark:text-zinc-100">max_depth</span>
+                  <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">[None, 10, 20]</span>
                 </div>
-                <p className="text-xs text-zinc-600">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400">
                   Kedalaman maksimum pohon untuk mengontrol kompleksitas dan mencegah overfitting.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 space-y-1">
+              <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/70 border border-zinc-200/80 dark:border-zinc-800 space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="font-mono text-xs font-bold text-zinc-900">min_samples_split</span>
-                  <span className="text-xs font-mono text-zinc-500">[2, 5]</span>
+                  <span className="font-mono text-xs font-bold text-zinc-900 dark:text-zinc-100">min_samples_split</span>
+                  <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">[2, 5]</span>
                 </div>
-                <p className="text-xs text-zinc-600">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400">
                   Batas minimum sampel yang dibutuhkan untuk memecah simpul internal pohon.
                 </p>
               </div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-zinc-100/70 text-xs font-mono text-zinc-600 flex items-center justify-between">
+            <div className="p-3.5 rounded-xl bg-zinc-100/70 dark:bg-zinc-950/70 border border-transparent dark:border-zinc-800 text-xs font-mono text-zinc-600 dark:text-zinc-400 flex items-center justify-between">
               <span>Scoring Metric: Accuracy</span>
               <span>CV Strategy: 5-Fold Stratified</span>
             </div>

@@ -1,3 +1,4 @@
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectOverview } from './components/ProjectOverview';
@@ -16,8 +17,9 @@ import { ScrollReveal } from './components/ScrollReveal';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#fafaf9] text-zinc-900 font-sans selection:bg-emerald-100 selection:text-emerald-900">
-      <Navbar />
+    <ThemeProvider>
+      <div className="min-h-screen bg-[#fafaf9] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300 transition-colors duration-200">
+        <Navbar />
       <main>
         <Hero />
         <ScrollReveal>
@@ -55,7 +57,8 @@ export function App() {
         </ScrollReveal>
       </main>
       <Footer />
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

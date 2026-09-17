@@ -8,7 +8,7 @@
     scroll-padding-top: 5rem;
   }
   body {
-    @apply bg-[#fafaf9] text-zinc-900;
+    @apply bg-[#fafaf9] text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-200;
   }
 }
 
@@ -22,11 +22,24 @@
   background: #f5f5f4;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #d6d3d1;
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a29e;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
 }
