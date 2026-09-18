@@ -73,15 +73,15 @@ export interface ModelMetric {
 
 export const PROJECT_METADATA = {
   title: 'Financial Transaction Profiling & Behavioral Classification',
-  repositoryName: 'financial-fraud-detection',
-  repositoryUrl: 'https://github.com/G-than12/financial-fraud-detection',
+  repositoryName: 'financial-transaction-profiling',
+  repositoryUrl: 'https://github.com/G-than12/financial-transaction-profiling',
   liveUrl: 'https://financial-fraud-detection-showcase.vercel.app/',
   author: {
     name: 'Gathan Hilabi',
     role: 'Informatics Student · Machine Learning & Data Science Track',
     university: 'UIN K.H. Abdurrahman Wahid Pekalongan',
     githubUrl: 'https://github.com/G-than12',
-    profileUrl: 'https://github.com/G-than12/financial-fraud-detection'
+    profileUrl: 'https://github.com/G-than12/financial-transaction-profiling'
   },
   summary: {
     rawRecords: 2537,

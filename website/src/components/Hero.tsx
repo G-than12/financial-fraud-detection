@@ -14,27 +14,42 @@ export const Hero: React.FC = () => {
           {/* Left Hero Column */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Author Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>{PROJECT_METADATA.author.name}</span>
-              <span className="text-zinc-400 dark:text-zinc-600">·</span>
-              <span className="text-zinc-500 dark:text-zinc-400 hidden sm:inline">UIN K.H. Abdurrahman Wahid Pekalongan</span>
+            {/* Author Badge & Domain Pill */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-300 shadow-subtle">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>{PROJECT_METADATA.author.name}</span>
+                <span className="text-zinc-400 dark:text-zinc-600">·</span>
+                <span className="text-zinc-500 dark:text-zinc-400 hidden sm:inline">{PROJECT_METADATA.author.university}</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-700 dark:text-emerald-300 text-[11px] font-mono font-medium">
+                <span>BMLP Capstone Project</span>
+              </div>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-950 dark:text-white leading-[1.1]">
-              Financial Fraud Detection
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.2rem] font-bold tracking-tight text-zinc-950 dark:text-white leading-[1.14]">
+              Financial Transaction Profiling{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">
+                &amp; Behavioral Classification
+              </span>
             </h1>
 
             {/* Descriptive Subtitle */}
-            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">
-              An interactive machine learning case study combining unsupervised customer transaction clustering and supervised multi-class behavioral classification.
+            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">
+              Pipeline <em>machine learning</em> komprehensif yang memadukan <strong>Unsupervised Learning</strong> (K-Means &amp; PCA 2D) untuk segmentasi perilaku transaksi nasabah, serta <strong>Supervised Learning</strong> (Decision Tree &amp; Tuned Random Forest) untuk inferensi profil secara instan dan presisi.
             </p>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['Machine Learning', 'K-Means Clustering', 'PCA 2D', 'Random Forest', 'Decision Tree', 'Python'].map((tag) => (
+              {[
+                'K-Means Clustering (k=3)',
+                'PCA 2D Projection',
+                'Random Forest (98.97%)',
+                'GridSearchCV 5-Fold CV',
+                'Customer Profiling',
+                'Fraud Anomaly Baseline'
+              ].map((tag) => (
                 <span
                   key={tag}
                   className="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 shadow-subtle"
@@ -68,7 +83,7 @@ export const Hero: React.FC = () => {
             <div className="pt-3">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-zinc-900/5 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 font-mono text-xs text-zinc-600 dark:text-zinc-400">
                 <Terminal className="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400" />
-                <span>git clone https://github.com/G-than12/financial-fraud-detection.git</span>
+                <span>git clone {PROJECT_METADATA.repositoryUrl}.git</span>
               </div>
             </div>
 

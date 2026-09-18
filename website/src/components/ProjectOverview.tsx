@@ -120,16 +120,21 @@ export const ProjectOverview: React.FC = () => {
 
         </div>
 
-        {/* Callout: Fraud Baseline Note */}
-        <div className="mt-12 p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
-          <div className="p-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 mt-0.5">
+        {/* Callout: Repository Context & Fraud Baseline Note */}
+        <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+          <div className="p-2 rounded-xl bg-emerald-100/80 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 mt-0.5 flex-shrink-0 border border-emerald-200 dark:border-emerald-800/80">
             <CheckCircle className="w-4 h-4" />
           </div>
-          <div className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            <strong className="text-zinc-900 dark:text-zinc-100 font-semibold block mb-1">
-              Catatan Hubungan Profiling & Fraud Detection:
+          <div className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-1.5">
+            <strong className="text-zinc-950 dark:text-zinc-100 font-semibold block text-sm">
+              Catatan Teknis: Konteks Pemodelan Baseline &amp; Domain Fraud Prevention
             </strong>
-            Meskipun proyek ini tidak melakukan klasifikasi biner <em>Fraud vs Legitimate</em> (karena dataset transaksi finansial tidak memiliki label penipuan ground-truth eksplisit), segmentasi perilaku transaksi semacam ini merupakan komponen fundamental (*behavioral baseline*) bagi institusi perbankan untuk mendeteksi anomali saat sebuah transaksi menyimpang jauh dari batas wajar klaster nasabah bersangkutan.
+            <p>
+              Repositori <code className="px-1.5 py-0.5 rounded bg-zinc-200/70 dark:bg-zinc-800 font-mono text-xs text-zinc-800 dark:text-zinc-200">{PROJECT_METADATA.repositoryName}</code> ini berorientasi pada domain analitik perbankan. Implementasi teknis berfokus pada <strong>Customer Behavioral Profiling &amp; Multi-Class Segment Classification</strong> (Target: 0, 1, 2) menggunakan K-Means dan Random Forest, bukan klasifikasi biner <em>Fraud vs. Legitimate</em>.
+            </p>
+            <p className="text-[11px] text-zinc-500 dark:text-zinc-400 pt-0.5">
+              Di industri perbankan dan fintech modern, pemahaman profil transaksi normal nasabah semacam ini merupakan prasyarat esensial (<em>baseline behavioral modeling</em>) sebelum mendesain aturan pencegahan penipuan maupun deteksi transaksi anomali secara real-time.
+            </p>
           </div>
         </div>
 

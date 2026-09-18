@@ -5,7 +5,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![Vercel Deployment](https://img.shields.io/badge/Live_Showcase-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://financial-fraud-detection-showcase.vercel.app/)
-[![Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/G-than12/financial-fraud-detection)
+[![Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/G-than12/financial-transaction-profiling)
 
 > **End-to-End Machine Learning Workflow**: Segmentasi perilaku transaksi nasabah menggunakan *Unsupervised Learning* (K-Means Clustering & PCA) yang diintegrasikan dengan *Supervised Learning* (Klasifikasi Multi-Kelas berbasis Random Forest & Decision Tree) untuk prediksi segmen nasabah baru secara presisi dan *real-time*.
 
@@ -15,15 +15,15 @@
 - **Author**: Gathan Hilabi
 - **Track**: Machine Learning Engineering & Data Science
 - **Live Showcase Website**: [https://financial-fraud-detection-showcase.vercel.app/](https://financial-fraud-detection-showcase.vercel.app/)
-- **Repository URL**: [https://github.com/G-than12/financial-fraud-detection](https://github.com/G-than12/financial-fraud-detection)
+- **Repository URL**: [https://github.com/G-than12/financial-transaction-profiling](https://github.com/G-than12/financial-transaction-profiling)
 
 ---
 
-## 📌 Catatan Teknis: Konteks Proyek & Penamaan Repositori
+## 📌 Catatan Teknis: Ruang Lingkup Proyek & Konteks Analitik Perbankan
 
 > [!IMPORTANT]
-> **Klarifikasi Implementasi Aktual vs. Penamaan Repositori:**
-> Meskipun repositori ini dinamai **`financial-fraud-detection`**, implementasi teknis aktual pada proyek ini berfokus pada **Segmentasi Transaksi & Profiling Perilaku Nasabah (*Customer Behavioral Profiling*)** menggunakan algoritma **K-Means Clustering**, yang kemudian dilanjutkan dengan tahap **Klasifikasi Multi-Kelas (*Supervised Learning*)** untuk memprediksi klaster nasabah (`Target: 0, 1, 2`).
+> **Klarifikasi Pemodelan Baseline & Pencegahan Fraud:**
+> Proyek ini berfokus pada **Segmentasi Transaksi & Profiling Perilaku Nasabah (*Customer Behavioral Profiling*)** menggunakan algoritma **K-Means Clustering**, yang kemudian dilanjutkan dengan tahap **Klasifikasi Multi-Kelas (*Supervised Learning*)** untuk memprediksi klaster nasabah (`Target: 0, 1, 2`).
 >
 > Proyek ini **tidak** melakukan klasifikasi biner transaksi (*Fraud* vs *Legitimate*), melainkan membangun pemodelan dasar (*baseline behavioral modeling*). Di industri perbankan dan *fintech* modern, pemahaman profil transaksi normal nasabah semacam ini merupakan prasyarat vital (*prerequisite*) sebelum mendesain sistem deteksi anomali atau aturan pencegahan fraud (*fraud rule-engine*).
 
@@ -299,7 +299,7 @@ Implementasi pipeline ini memberikan nilai strategis langsung bagi operasional p
 ## 📂 Repository Structure & Model Artifacts
 
 ```
-financial-fraud-detection/
+financial-transaction-profiling/
 ├── data/
 │   ├── data_clustering.csv                 # Dataset hasil clustering (skala terstandardisasi)
 │   └── data_clustering_inverse.csv         # Dataset hasil clustering (skala riil + label teks)
@@ -374,8 +374,8 @@ Untuk mereplikasi atau menguji pipeline ini di lingkungan lokal Anda, ikuti lang
 
 ### 1. Kloning Repositori
 ```bash
-git clone https://github.com/G-than12/financial-fraud-detection.git
-cd financial-fraud-detection
+git clone https://github.com/G-than12/financial-transaction-profiling.git
+cd financial-transaction-profiling
 ```
 
 ### 2. Setup Virtual Environment

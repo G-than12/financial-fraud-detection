@@ -43,10 +43,10 @@ export const Navbar: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 font-mono">
-                {PROJECT_METADATA.repositoryName}
+                Transaction Profiling ML
               </span>
               <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono uppercase tracking-wider">
-                ML Case Study
+                BMLP Showcase · {PROJECT_METADATA.repositoryName}
               </span>
             </div>
           </a>
