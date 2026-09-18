@@ -49,7 +49,7 @@ export const ClassificationSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div id="classification" className="max-w-3xl mb-12 scroll-mt-24 sm:scroll-mt-28">
+        <div id="classification" className="max-w-3xl mb-12 scroll-mt-28">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 mb-3 border border-transparent dark:border-zinc-800">
             <span>SECTION 05</span>
             <span>·</span>
@@ -92,7 +92,7 @@ export const ClassificationSection: React.FC = () => {
         </div>
 
         {/* Model Comparison Chart & Matrix Section */}
-        <div id="results" className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 scroll-mt-24 sm:scroll-mt-28">
+        <div id="results" className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 scroll-mt-28">
           
           {/* Left Column: Interactive Comparison Bar Chart */}
           <div className="lg:col-span-7 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-[#fafaf9] dark:bg-zinc-900 p-6 sm:p-8 shadow-subtle flex flex-col justify-between">

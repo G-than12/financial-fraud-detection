@@ -39,7 +39,7 @@ export const ClusteringSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div id="clustering" className="max-w-3xl mb-12 scroll-mt-24 sm:scroll-mt-28">
+        <div id="clustering" className="max-w-3xl mb-12 scroll-mt-28">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 mb-3 border border-transparent dark:border-zinc-800">
             <span>SECTION 04</span>
             <span>·</span>

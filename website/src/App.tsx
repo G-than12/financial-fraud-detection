@@ -22,37 +22,37 @@ export function App() {
         <Navbar />
       <main>
         <Hero />
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <ProjectOverview />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <DatasetSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <PreprocessingSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <ClusteringSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <ClassificationSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <HyperparameterSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <ModelArtifactsSection />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <MethodologyTimeline />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <TechnicalDetailsAccordion />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <LimitationsAndFuture />
         </ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="none">
           <AuthorSection />
         </ScrollReveal>
       </main>

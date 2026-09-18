@@ -20,8 +20,8 @@ export const Navbar: React.FC = () => {
       const navbarHeight = navbar ? navbar.offsetHeight : 68;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       
-      // Position view 20px comfortably above the section title badge
-      const offsetPosition = elementPosition - navbarHeight - 20;
+      // Jarak lega 40px di atas badge judul sesuai screenshot acuan pengguna
+      const offsetPosition = elementPosition - navbarHeight - 40;
 
       setActiveSection(id);
       setIsClickScrolling(true);
@@ -126,12 +126,8 @@ export const Navbar: React.FC = () => {
             }}
             className="flex items-center gap-3 group focus:outline-none cursor-pointer"
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-zinc-900 dark:bg-zinc-800 text-white shadow-sm border border-zinc-700/60 dark:border-zinc-700 group-hover:border-emerald-500/60 group-hover:scale-105 transition-all">
+            <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-zinc-900 dark:bg-zinc-800 text-white shadow-sm border border-zinc-700/60 dark:border-zinc-700 group-hover:border-emerald-500/60 group-hover:scale-105 transition-all">
               <Layers className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-              </span>
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
@@ -197,7 +193,6 @@ export const Navbar: React.FC = () => {
             >
               <Github className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
               <span>GitHub</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             </a>
           </div>
 
