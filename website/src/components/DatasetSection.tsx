@@ -17,11 +17,11 @@ export const DatasetSection: React.FC = () => {
   const types = ['All', 'Numerical', 'Categorical', 'Engineered', 'Target'];
 
   return (
-    <section id="dataset" className="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-[#fafaf9] dark:bg-zinc-950">
+    <section className="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-[#fafaf9] dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
+        <div id="dataset" className="max-w-3xl mb-12 scroll-mt-24 sm:scroll-mt-28">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 mb-3 border border-transparent dark:border-zinc-800">
             <span>SECTION 02</span>
             <span>·</span>

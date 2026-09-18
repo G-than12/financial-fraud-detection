@@ -8,7 +8,36 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('overview');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isClickScrolling, setIsClickScrolling] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  // Smooth scroll directly to the section header title with clean breathing room
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const navbar = document.querySelector('header');
+      const navbarHeight = navbar ? navbar.offsetHeight : 68;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      
+      // Position view 20px comfortably above the section title badge
+      const offsetPosition = elementPosition - navbarHeight - 20;
+
+      setActiveSection(id);
+      setIsClickScrolling(true);
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+
+      // Re-enable scroll spy after scroll animation completes
+      setTimeout(() => {
+        setIsClickScrolling(false);
+      }, 850);
+    }
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,27 +50,42 @@ export const Navbar: React.FC = () => {
         setScrollProgress(progress);
       }
 
-      // Scroll Spy for active navigation link
+      // If user recently clicked a nav item, lock activeSection during scroll animation
+      if (isClickScrolling) return;
+
+      // Robust Scroll Spy using absolute document Y coordinates (immune to motion transforms)
       const sectionIds = ['overview', 'dataset', 'preprocessing', 'clustering', 'classification', 'results', 'models'];
-      const scrollPosition = window.scrollY + 130;
+      const scrollThreshold = window.scrollY + 140;
+
+      let currentSection = sectionIds[0];
 
       for (const id of sectionIds) {
         const element = document.getElementById(id);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(id);
-            break;
+          const top = element.getBoundingClientRect().top + window.scrollY;
+          if (scrollThreshold >= top) {
+            currentSection = id;
           }
         }
       }
+
+      // Edge case: top of the page
+      if (window.scrollY < 200) {
+        currentSection = 'overview';
+      }
+
+      // Edge case: bottom of the page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        currentSection = sectionIds[sectionIds.length - 1];
+      }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isClickScrolling]);
 
   const navLinks = [
     { label: 'Overview', href: '#overview', id: 'overview' },
@@ -73,7 +117,15 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 sm:h-[4.25rem]">
           
           {/* Brand Logo & Tag */}
-          <a href="#" className="flex items-center gap-3 group focus:outline-none">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setActiveSection('overview');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-3 group focus:outline-none cursor-pointer"
+          >
             <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-zinc-900 dark:bg-zinc-800 text-white shadow-sm border border-zinc-700/60 dark:border-zinc-700 group-hover:border-emerald-500/60 group-hover:scale-105 transition-all">
               <Layers className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
               <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
@@ -104,7 +156,8 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`relative px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 cursor-pointer ${
                     isActive
                       ? 'bg-white dark:bg-zinc-800 text-zinc-950 dark:text-white font-semibold shadow-xs'
                       : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-white/50 dark:hover:bg-zinc-800/40'
@@ -183,8 +236,8 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                     isActive
                       ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-800/80 shadow-xs'
                       : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900'
