@@ -75,7 +75,7 @@ export const PROJECT_METADATA = {
   title: 'Financial Transaction Profiling & Behavioral Classification',
   repositoryName: 'financial-transaction-profiling',
   repositoryUrl: 'https://github.com/G-than12/financial-transaction-profiling',
-  liveUrl: 'https://financial-fraud-detection-showcase.vercel.app/',
+  liveUrl: 'https://financial-transaction-profiling.vercel.app/',
   author: {
     name: 'Gathan Hilabi',
     role: 'Informatics Student · Machine Learning & Data Science Track',

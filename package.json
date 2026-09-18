@@ -1,8 +1,8 @@
 {
-  "name": "financial-fraud-detection-project",
+  "name": "financial-transaction-profiling-project",
   "version": "1.0.0",
   "private": true,
-  "description": "Root scripts for Financial Fraud Detection Showcase",
+  "description": "Root scripts for Financial Transaction Profiling Showcase",
   "scripts": {
     "dev": "npm --prefix website run dev",
     "build": "npm --prefix website run build",
